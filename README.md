@@ -7,3 +7,9 @@ Desenvolvimento de uma API para o projeto final de NodeJs, módulo 5, da Step Co
 * Obter todos os Tickets            - GET
 * Atualizar um ticket existente     - PUT
 * Deletar um ticket                 - DELETE
+
+## Stack
+
+* Java Script ES6
+* Type Script
+* Postman
