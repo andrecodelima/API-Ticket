@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "commit": "cz"
   },
   "author": "Andre Lima",
   "license": "ISC",
@@ -15,5 +16,8 @@
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   },
-  "type":"module"
+  "type": "module",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  }
 }

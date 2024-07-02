@@ -3,7 +3,7 @@ import { openDb } from "../../config/configDb.js";
 
 // GET ALL
 export async function getAllTicket(req, resp){
-    // const ticket = req.body
+     
     try{
         const db = await openDb()
         const tickets = await db.all('SELECT * FROM ticket')
@@ -17,6 +17,34 @@ export async function getAllTicket(req, resp){
             }
         )
 
+
+    }catch(e){
+        console.log(`Erro ao recuperar registro -- ${e}`)
+        resp.status(500).json(
+            {
+                "statusCode":500,
+                "message":'Erro ao recuperar registro'
+            }
+        )
+    }
+}
+
+// GET BY ID
+export async function getTicketById(req, resp){
+
+    try{
+        const id = req.body.id;
+        const db = await openDb();
+        const ticket = await db.get('SELECT * FROM ticket WHERE id = ?', [id])
+
+        console.log(`Ticket: ${ticket}`)
+        resp.status(200).json(
+            {
+                "statusCode":200,
+                data:ticket
+            }
+        )
+        return
 
     }catch(e){
         console.log(`Erro ao recuperar registro -- ${e}`)
